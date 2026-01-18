@@ -44,6 +44,7 @@ git clone <your-repository-url>
 cd movie-tracker
 ```
 
+
 # 2: Database Setup
 Using pgAdmin 4
 
@@ -72,6 +73,7 @@ CREATE TABLE movies (
     * Right-click on Tables → Refresh
     * You should see the movies table
 
+
 # 3: Backend Setup
 ```text
 cd backend
@@ -82,3 +84,85 @@ Start the server
 ```text
 node server.js
 ```
+
+# 4: Frontend Setup
+Open  a new terminal window:
+```test
+cd frontend
+npm install
+npm run dev
+```
+The application will open at: http://localhost:5173
+
+
+# 5: API Endpoints
+Base URL
+```text
+http://localhost:5000
+```
+
+Endpoints
+| Method | Endpoint | Description | Body |
+| :--- | :---: | ---: |
+| GET | /api/movies | Get all movies | None |
+| GET | /api/movies/:id | Get single movie | None |
+| POST | /api/movies | Create new movie | {title, genre, rating} |
+| PUT | /api/movies/:id | Update movie | {title, genre, rating} |
+| DELETE | /api/movies/:id | Delete movie | None |
+
+
+## Request Body Example
+```text
+{
+  "title": "The Dark Knight",
+  "genre": "Action",
+  "rating": 5
+}
+```
+
+## Response Example
+```text
+{
+  "movie_id": 1,
+  "title": "The Dark Knight",
+  "genre": "Action",
+  "rating": 5
+}
+```
+
+# 6: Testing with Postman
+
+## 1. Add a Movie(POST)
+    * URL: http://localhost:5000/api/movies
+    * Method: POST
+    * Headers: Content-Type: application/json
+    * Body:
+```text
+{
+  "title": "Interstellar",
+  "genre": "Sci-Fi",
+  "rating": 5
+}
+```
+
+## 2. Get All Movies(GET)
+    * URL: http://localhost:5000/api/movies
+    * Method: GET
+
+## 3. Update Movie(PUT)
+    * URL: http://localhost:5000/api/movies/1
+    * Method: PUT
+    * Headers: Content-Type: application/json
+    * Body:
+```text
+{
+  "title": "Inception (Updated)",
+  "genre": "Sci-Fi/Thriller",
+  "rating": 5
+}
+```
+
+## 4. Delete Movie(DELETE)
+    * URL: http://localhost:5000/api/movies/1
+    * Method: DELETE
+
