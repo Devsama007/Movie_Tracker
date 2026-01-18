@@ -103,7 +103,7 @@ http://localhost:5000
 
 Endpoints
 | Method | Endpoint | Description | Body |
-| :--- | :---: | ---: |
+| --- | --- | --- | --- |
 | GET | /api/movies | Get all movies | None |
 | GET | /api/movies/:id | Get single movie | None |
 | POST | /api/movies | Create new movie | {title, genre, rating} |
