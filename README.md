@@ -51,14 +51,14 @@ Using pgAdmin 4
 ## 1: Open pgAdmin 4
 ## 2: Connect to PostgreSQL server
 ## 3: Create Database:
-    * Right-click on "Databases"
-    * Select "Create" → "Database"
-    * Name: movie_tracker
-    * Click "Save"
+   * Right-click on "Databases"
+   * Select "Create" → "Database"
+   * Name: movie_tracker
+   * Click "Save"
 ## 4: Create Table:
-    * Expand movie_tracker → Schemas → public → Tables
-    * Right-click on Tables → Select "Query Tool"
-    * Paste and execute:
+   * Expand movie_tracker → Schemas → public → Tables
+   * Right-click on Tables → Select "Query Tool"
+   * Paste and execute:
 
 ```text
 CREATE TABLE movies (
@@ -70,8 +70,8 @@ CREATE TABLE movies (
 ```
 
 ## 5: Verify Table Creation:
-    * Right-click on Tables → Refresh
-    * You should see the movies table
+   * Right-click on Tables → Refresh
+   * You should see the movies table
 
 
 # 3: Backend Setup
@@ -133,10 +133,10 @@ Endpoints
 # 6: Testing with Postman
 
 ## 1. Add a Movie(POST)
-    * URL: http://localhost:5000/api/movies
-    * Method: POST
-    * Headers: Content-Type: application/json
-    * Body:
+   * URL: http://localhost:5000/api/movies
+   * Method: POST
+   * Headers: Content-Type: application/json
+   * Body:
 ```text
 {
   "title": "Interstellar",
@@ -146,14 +146,14 @@ Endpoints
 ```
 
 ## 2. Get All Movies(GET)
-    * URL: http://localhost:5000/api/movies
-    * Method: GET
+   * URL: http://localhost:5000/api/movies
+   * Method: GET
 
 ## 3. Update Movie(PUT)
-    * URL: http://localhost:5000/api/movies/1
-    * Method: PUT
-    * Headers: Content-Type: application/json
-    * Body:
+   * URL: http://localhost:5000/api/movies/1
+   * Method: PUT
+   * Headers: Content-Type: application/json
+   * Body:
 ```text
 {
   "title": "Inception (Updated)",
@@ -163,6 +163,6 @@ Endpoints
 ```
 
 ## 4. Delete Movie(DELETE)
-    * URL: http://localhost:5000/api/movies/1
-    * Method: DELETE
+   * URL: http://localhost:5000/api/movies/1
+   * Method: DELETE
 
