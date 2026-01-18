@@ -1,0 +1,345 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #1a1a2e;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+  overflow-x:hidden;
+}
+
+/* Sliding Diagonal Backgrounds */
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: -50%;
+  right: -50%;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+body::before {
+  background-image: linear-gradient(-60deg, #e74c3c 50%, #ffd700 50%);
+  animation: slide 4s ease-in-out infinite alternate;
+}
+
+body::after {
+  background-image: linear-gradient(-60deg, #ffd700 50%, #e74c3c 50%);
+  animation: slide 4s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-25%);
+  }
+  100% {
+    transform: translateX(25%);
+  }
+}
+
+.App {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.app-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Main Content */
+.app-main {
+  background: rgba(26, 26, 46, 0.95);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(231, 76, 60, 0.3);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* Action Buttons */
+.action-buttons {
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+}
+
+.btn-primary:hover {
+  background: #5568d3;
+}
+
+.btn-success {
+  background: linear-gradient(135deg, #ffd700 0%, #f39c12 100%);
+  color: #1a1a2e;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, #f39c12 0%, #ffd700 100%);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+.btn-secondary {
+  background: rgba(255, 215, 0, 0.2);
+  color: #ffd700;
+  border: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 215, 0, 0.3);
+  border-color: #ffd700;
+}
+
+.btn-edit {
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(52, 152, 219, 0.4);
+}
+
+.btn-edit:hover {
+  background: linear-gradient(135deg, #2980b9 0%, #3498db 100%);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.6);
+}
+
+.btn-delete {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  color: white;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 10px rgba(231, 76, 60, 0.4);
+}
+
+.btn-delete:hover {
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+  box-shadow: 0 4px 15px rgba(231, 76, 60, 0.6);
+}
+
+/* Movie Form */
+.movie-form-container {
+  background: #f7fafc;
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border: 2px solid #e2e8f0;
+}
+
+.movie-form-container h2 {
+  margin-bottom: 20px;
+  color: #4400ff;
+}
+
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #000000;
+}
+
+.form-group input,
+.form-group select {
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #ffd700;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Movie List */
+.movie-list {
+  margin-top: 30px;
+}
+
+.movie-list h2 {
+  margin-bottom: 20px;
+  color: #ffd700;
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+/* Movie Card */
+.movie-card {
+  background: linear-gradient(135deg, rgba(42, 42, 62, 0.9) 0%, rgba(26, 26, 46, 0.9) 100%);
+  border: 2px solid rgba(231, 76, 60, 0.4);
+  border-radius: 12px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(231, 76, 60, 0.5);
+  border-color: #e74c3c;
+}
+
+.movie-card.top-pick {
+  border: 3px solid #ffd700;
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(231, 76, 60, 0.2) 100%);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+}
+
+.top-pick-badge {
+  position: absolute;
+  top: 5px;
+  right: -12px;
+  background: linear-gradient(135deg, #f6ad55 0%, #fad60b 100%);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  transform: rotate(27deg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.movie-header {
+  margin-bottom: 15px;
+}
+
+.movie-title {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.movie-genre {
+  display: inline-block;
+  background: rgba(51, 48, 224, 0.8);
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.movie-rating {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.stars {
+  font-size: 1.5rem;
+  color: #f6ad55;
+}
+
+.rating-number {
+  font-weight: 600;
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+.movie-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.movie-actions .btn {
+  flex: 1;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #ffd700;
+}
+
+.empty-state h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.empty-state p {
+  font-size: 1.1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .movies-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+  }
+
+  .form-buttons .btn {
+    width: 100%;
+  }
+}
